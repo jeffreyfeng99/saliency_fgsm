@@ -29,7 +29,7 @@ class PatternPreprocess(object):
 def get_preprocess(arch, method):
     if arch == 'googlenet':
         transf = transforms.Compose([
-            transforms.Scale((224, 224)),
+            transforms.Scale(224),
             transforms.ToTensor(),
             transforms.Normalize(mean=[123. / 255, 117. / 255, 104. / 255],
                                  std=[1. / 255, 1. / 255, 1. / 255])
@@ -41,7 +41,7 @@ def get_preprocess(arch, method):
             ])
         else:
             transf = transforms.Compose([
-                transforms.Scale((224, 224)),
+                transforms.Resize(224),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
@@ -55,7 +55,7 @@ def get_preprocess(arch, method):
                                              std=[0.229, 0.224, 0.225])
 
         transf = transforms.Compose([
-            transforms.Scale((224, 224)),
+            transforms.Resize(224),
             transforms.ToTensor(),
             normalize
         ])
