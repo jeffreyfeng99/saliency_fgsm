@@ -1,3 +1,4 @@
+
 import torchvision.transforms as transforms
 import numpy as np
 import torch
@@ -41,7 +42,7 @@ def get_preprocess(arch, method):
             ])
         else:
             transf = transforms.Compose([
-                transforms.Resize(224),
+                transforms.Scale(224),
                 transforms.ToTensor(),
                 transforms.Normalize(mean=[0.485, 0.456, 0.406],
                                      std=[0.229, 0.224, 0.225])
@@ -55,11 +56,9 @@ def get_preprocess(arch, method):
                                              std=[0.229, 0.224, 0.225])
 
         transf = transforms.Compose([
-            transforms.Resize(224),
+            transforms.Scale(224),
             transforms.ToTensor(),
             normalize
         ])
 
     return transf
-
-
