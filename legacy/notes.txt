@@ -28,4 +28,7 @@ Number of Adveserial examples with mask:
 554
 Number of Adveserial examples with 1-mask:
 909
+Number of Adveserial examples without mask:
+1188
+
 
